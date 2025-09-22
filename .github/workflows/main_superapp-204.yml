@@ -35,9 +35,10 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
-  deploy:
+  deploy-staging:
     runs-on: windows-latest
     needs: build
+    environment: staging
     permissions:
       id-token: write #This is required for requesting the JWT
       contents: read #This is required for actions/checkout
@@ -55,11 +56,40 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_456327AE9D8143308F0E293B0DFF616E }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DD1018864D6247C8A1880A32F8093827 }}
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
+      - name: Deploy to Azure Web App Staging Slot
+        id: deploy-to-staging
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'superapp-204'
-          slot-name: 'Production'
+          slot-name: 'staging'
           package: .
+
+      - name: Show staging deployment URL
+        run: |
+          echo "🚀 Staging deployment completed successfully!"
+          echo "📋 Staging URL: https://superapp-204-staging.azurewebsites.net"
+          echo "✅ Ready for manual testing and approval"
+
+  deploy-production:
+    runs-on: windows-latest
+    needs: deploy-staging
+    environment: production
+    permissions:
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
+
+    steps:
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D186BCA0108D44F7B64ED31D56CC9A93 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_456327AE9D8143308F0E293B0DFF616E }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DD1018864D6247C8A1880A32F8093827 }}
+
+      - name: Swap staging slot to production
+        run: |
+          echo "🔄 Swapping staging slot to production..."
+          az webapp deployment slot swap -g ${{ secrets.AZURE_RESOURCE_GROUP || 'DefaultResourceGroup-WUS2' }} -n superapp-204 --slot staging --target-slot production
+          echo "✅ Production deployment completed!"
+          echo "🌐 Production URL: https://superapp-204.azurewebsites.net"
           
