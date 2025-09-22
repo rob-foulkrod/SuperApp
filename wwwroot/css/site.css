@@ -32,6 +32,10 @@ body {
   color: white !important;
 }
 
+.hero-section .text-muted {
+  color: white !important;
+}
+
 .feature-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: white;
