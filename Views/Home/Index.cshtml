@@ -1,0 +1,154 @@
+﻿@{
+    ViewData["Title"] = "SuperApp - Learning Platform";
+}
+
+<div class="hero-section text-center py-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="display-3 fw-bold text-primary mb-4">
+                    🚀 SuperApp is Live!
+                </h1>
+                <p class="lead text-muted mb-4">
+                    Congratulations! Your .NET 8 MVC application has been successfully deployed. 
+                    This modern web application demonstrates the power of ASP.NET Core.
+                </p>
+                <div class="deployment-badge">
+                    <span class="badge bg-success fs-6 px-3 py-2">
+                        ✅ Deployment Successful
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="feature-card h-100 p-4 border rounded-3 shadow-sm">
+                <div class="text-center mb-3">
+                    <div class="feature-icon">🏗️</div>
+                </div>
+                <h3 class="h5 fw-bold text-center mb-3">Modern Architecture</h3>
+                <p class="text-muted">
+                    Built with .NET 8 and ASP.NET Core MVC, featuring the latest web development technologies 
+                    and best practices for scalable applications.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card h-100 p-4 border rounded-3 shadow-sm">
+                <div class="text-center mb-3">
+                    <div class="feature-icon">📱</div>
+                </div>
+                <h3 class="h5 fw-bold text-center mb-3">Responsive Design</h3>
+                <p class="text-muted">
+                    Fully responsive interface using Bootstrap 5, ensuring optimal viewing experience 
+                    across all devices and screen sizes.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card h-100 p-4 border rounded-3 shadow-sm">
+                <div class="text-center mb-3">
+                    <div class="feature-icon">⚡</div>
+                </div>
+                <h3 class="h5 fw-bold text-center mb-3">High Performance</h3>
+                <p class="text-muted">
+                    Optimized for speed and efficiency with ASP.NET Core's high-performance runtime 
+                    and modern development patterns.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="learning-section bg-light rounded-3 p-5 mb-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">🎓 Learning Platform Features</h2>
+                <ul class="list-unstyled">
+                    <li class="d-flex align-items-center mb-3">
+                        <span class="text-success me-3">✓</span>
+                        <span>Model-View-Controller (MVC) Architecture</span>
+                    </li>
+                    <li class="d-flex align-items-center mb-3">
+                        <span class="text-success me-3">✓</span>
+                        <span>Dependency Injection Container</span>
+                    </li>
+                    <li class="d-flex align-items-center mb-3">
+                        <span class="text-success me-3">✓</span>
+                        <span>Razor View Engine</span>
+                    </li>
+                    <li class="d-flex align-items-center mb-3">
+                        <span class="text-success me-3">✓</span>
+                        <span>Bootstrap 5 UI Framework</span>
+                    </li>
+                    <li class="d-flex align-items-center mb-3">
+                        <span class="text-success me-3">✓</span>
+                        <span>Modern JavaScript Integration</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="stats-grid">
+                    <div class="stat-item text-center p-3 bg-white rounded mb-3">
+                        <div class="stat-number text-primary fw-bold fs-3">.NET 8</div>
+                        <div class="stat-label text-muted">Framework Version</div>
+                    </div>
+                    <div class="stat-item text-center p-3 bg-white rounded mb-3">
+                        <div class="stat-number text-success fw-bold fs-3">MVC</div>
+                        <div class="stat-label text-muted">Architecture Pattern</div>
+                    </div>
+                    <div class="stat-item text-center p-3 bg-white rounded">
+                        <div class="stat-number text-info fw-bold fs-3">C#</div>
+                        <div class="stat-label text-muted">Programming Language</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <h3 class="mb-4">Ready to Explore?</h3>
+                <p class="lead text-muted mb-4">
+                    This application is fully functional and ready for development. 
+                    Check out the source code and start building amazing features!
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://learn.microsoft.com/aspnet/core" 
+                       class="btn btn-primary btn-lg" 
+                       target="_blank" 
+                       rel="noopener">
+                        📚 Learn ASP.NET Core
+                    </a>
+                    <a href="https://docs.microsoft.com/dotnet" 
+                       class="btn btn-outline-primary btn-lg" 
+                       target="_blank" 
+                       rel="noopener">
+                        📖 .NET Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="deployment-info mt-5 p-4 bg-success bg-opacity-10 border border-success border-opacity-25 rounded-3">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h4 class="text-success mb-2">🎉 Deployment Information</h4>
+                <p class="mb-1"><strong>Status:</strong> <span class="text-success">Successfully Deployed</span></p>
+                <p class="mb-1"><strong>Framework:</strong> ASP.NET Core 8.0</p>
+                <p class="mb-1"><strong>Environment:</strong> <span id="environment">Production</span></p>
+                <p class="mb-0"><strong>Deployment Time:</strong> <span id="deploy-time">@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss UTC")</span></p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <div class="pulse-animation">
+                    <span class="badge bg-success fs-6 px-3 py-2">🟢 Online</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
